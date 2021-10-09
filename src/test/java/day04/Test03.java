@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 public class Test03 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //        1. “https://www.saucedemo.com” Adresine gidin
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
@@ -19,18 +19,24 @@ public class Test03 {
 //        2. Username kutusuna “standard_user” yazdirin
         driver.findElement(By.id("user-name")).sendKeys("standard_user");
 //        3. Password kutusuna “secret_sauce” yazdirin
+        Thread.sleep(2000);
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
 //        4. Login tusuna basin
+        Thread.sleep(2000);
         driver.findElement(By.id("login-button")).click();
 //        5. Ilk urunun ismini kaydedin ve bu urunun sayfasina gidin
+        Thread.sleep(2000);
         WebElement ilkIsım=driver.findElement(By.xpath("//a[@id='item_4_title_link']"));
         System.out.println(ilkIsım.getText());
 //        6. Add to Cart butonuna basin
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@id='add-to-cart-sauce-labs-backpack']")).click();
 //        7. Alisveris sepetine tiklayin
+        Thread.sleep(2000);
         driver.findElement(By.xpath("//a[@class='shopping_cart_link']")).click();
 //        8. Sectiginiz urunun basarili olarak sepete eklendigini control edin
         WebElement urunKontrol=driver.findElement(By.xpath("//a[@id='item_4_title_link']"));
+        Thread.sleep(2000);
         System.out.println(urunKontrol.getText());
 //        9. Sayfayi kapatin
         driver.close();
