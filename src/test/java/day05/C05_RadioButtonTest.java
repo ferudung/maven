@@ -14,9 +14,9 @@ import java.util.concurrent.TimeUnit;
 public class C05_RadioButtonTest {
     //1. Bir class oluşturun : RadioButtonTest
     //2. Gerekli yapiyi olusturun ve aşağıdaki görevi tamamlayın.
-    WebDriver driver;
+     WebDriver driver;
     @Before
-    public void setup(){
+    public  void setup(){
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.manage().window().maximize();
